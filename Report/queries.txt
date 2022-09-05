@@ -1,0 +1,66 @@
+export CLASSPATH='/mnt/c/Users/Chakradhar/Downloads/mysql-connector-java-8.0.18.jar:.'
+
+                        ---------- Users ----------
+# List of all available books :
+    select isbn, title, author_id, publisher_id, year from book;
+
+# List of all available books of a specific author :
+    i) using author_id :- select isbn, title, author_id, publisher_id, year from book where author_id = 'scan';
+    ii) using author_name :- 
+            select isbn, title, name 'author_name', publisher_id, year from book b
+            inner join author a
+            on a.id = b.author_id
+            where a.name = 'scan';
+
+# List of all available books of a specific publisher :
+    i) using publisher_id :- select isbn, title, author_id, publisher_id, year from book where publisher_id = 'scan';
+    ii) using publisher_name :- 
+            select isbn, title, author_id, name 'publisher_name', year from book b
+            inner join publisher p
+            on p.id = b.publisher_id
+            where p.name = 'scan';
+
+# Search for a book :
+    select isbn, title from book where title = 'user';
+
+                        ---------- Author ----------
+# First search needs to takes place
+# If Author wants to update author_name/id, publisher_name/id, year of book published by publisher
+    update book 
+        set year = 'scan1'
+        where author_id = (select id from author where name = 'scan2(author name)') and isbn = 'scan(isbn)';
+    
+    update book
+        set publisher_id = (select id from publisher where name = 'scan')
+        where author_id = (select id from author where name = 'scan2(author name)') and isbn = 'scan(isbn)';
+
+                        ---------- Publisher ----------
+# Insert the book record :-
+    insert into book (isbn, title, author_id, publisher_id, year) values 
+    ('scan1', 'scan2','scan3','scan4','scan5');
+
+# Delete the book record :-
+    delete from book where isbn = 'scan'
+
+                        ---------- Admin ----------
+# Authentication :-
+    select id from admin where username = 'scan1' and password = 'scan2';
+
+# Insert of publisher :-
+
+# Insert of  Author :-
+
+# Deletion of publisher :-
+    delete from publisher where name = 
+
+    delete from book where author_id = (select id from author where name = 'scan');
+    delete from author where name = 
+
+System.out.println("+------------+-------------+------------+----------------------+--------------+----------------+-----------------+");
+         System.out.format("| %-10s | %-11s | %-10s | %-20s | %-12s | %-14s | %-15s |\n","Order_ID","Customer_ID","Product_ID","Order_Date","Order_Status","Order_Quantity","Order_Sub_Total");
+         System.out.println("+------------+-------------+------------+----------------------+--------------+----------------+-----------------+");
+         while(rs.next())
+         {
+            System.out.println(System.out.format("| %-10s | %-11s | %-10s | %-20s | %-12s | %-14s | %-15s |",rs.getString("Order_ID"),rs.getString("Customer_ID"),rs.getString("Product_ID"),rs.getString("Order_Date"),rs.getString("Order_Status"),rs.getString("Order_Quantity"),rs.getString("Order_Sub_Total")));   
+            System.out.println("------------------------------------------------------------------------------------------------------------------");
+         }

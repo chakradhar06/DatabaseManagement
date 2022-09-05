@@ -1,0 +1,39 @@
+export CLASSPATH='/mnt/c/Users/Chakradhar/Downloads/mysql-connector-java-8.0.18.jar:.'
+-------------------------------- User ---------------------------
+1. List of all available books
+2. List of available books from specific author
+    1. Through Author ID
+    2. Through Author name
+3. List of available books from specific publisher
+    1. Through Publisher ID
+    2. Through Publisher name
+4. Search for a specific book
+    1. Through Book ISBN number
+    2. Through Book name
+
+-------------------------------- Admin ---------------------------
+1. Authentication for admin
+2. Adding of new Author
+3. Adding of new Publisher
+4. Deletion of a Author
+    1. Through Author's ID
+5. Deletion of a Publisher
+    1. Through Publisher's ID
+
+-------------------------------- Author ---------------------------
+1. Search of Author in the database
+2. View the details of the author
+3. Updating of Author details
+    1. Name
+    2. Age
+    3. Email
+
+-------------------------------- Publisher ---------------------------
+1. Search of Publisher in the database
+2. View the details of publisher
+3. Adding of new Book record
+4. Deletion of a Book record
+    1. Through Book ISBN
+    2. Through Book name
+5. Updating of publisher details
+    1. Name
